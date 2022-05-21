@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=windows-1256"
+    pageEncoding="windows-1256"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1256">
+<title>Login & Registration</title>
+<!-- for Bootstrap CSS -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- YOUR own local CSS -->
+<link rel="stylesheet" href="/css/main.css"/>
+<!-- For any Bootstrap that uses JS or jQuery-->
+<script src="/webjars/jquery/jquery.min.js"></s
+</head>
+<body>
+
+</body>
+</html>

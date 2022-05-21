@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1256">
+<title>Login & Registration</title>
+<!-- for Bootstrap CSS -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- YOUR own local CSS -->
+<link rel="stylesheet" href="/css/main.css"/>
+<!-- For any Bootstrap that uses JS or jQuery-->
+<script src="/webjars/jquery/jquery.min.js"></s
+</head>
+<body>
+<h1>Registration</h1>
+<form:form action="/" method="post" modelAttribute="newUser">
+    <p>
+        <form:label path="userName">Title</form:label>
+        <form:errors path="userName"/>
+        <form:input path="userName"/>
+    </p>
+    <p>
+        <form:label path="email">Description</form:label>
+        <form:errors path="email"/>
+        <form:textarea path="email"/>
+    </p>
+    <p>
+        <form:label path="password">Language</form:label>
+        <form:errors path="password"/>
+        <form:input path="password"/>
+    </p>
+    <p>
+        <form:label path="confirm">Pages</form:label>
+        <form:errors path="confirm"/>
+        <form:input type="password" path="confirm"/>
+    </p>
+    <input type="submit" value="Submit"/>
+</form:form>
+<h1>Login</h1>
+<form:form action="/" method="post" modelAttribute="newLogin">
+    <p>
+        <form:label path="email">Title</form:label>
+        <form:errors path="email"/>
+        <form:input path="email"/>
+    </p>
+    <p>
+        <form:label path="password">Description</form:label>
+        <form:errors path="password"/>
+        <form:textarea path="password"/>
+    </p>
+
+    <input type="submit" value="Submit"/>
+</form:form>
+
+</body>
+</html>

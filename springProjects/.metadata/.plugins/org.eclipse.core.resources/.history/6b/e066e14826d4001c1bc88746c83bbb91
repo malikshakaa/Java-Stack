@@ -1,0 +1,22 @@
+package com.malik.mvc.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.malik.mvc.repositories.TravelRepository1;
+
+@Service
+public class TravelService {
+	private final TravelRepository1 travelRepository;
+	
+	public TravelService(TravelRepository1 travelRepository) {
+		this.travelRepository = travelRepository;
+	}
+	
+	public List<TravelModel> allTravels(){
+		return travelRepository.findAll();
+	}
+	
+
+}

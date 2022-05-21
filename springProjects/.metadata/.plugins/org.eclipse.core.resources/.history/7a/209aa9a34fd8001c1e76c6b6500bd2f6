@@ -1,0 +1,7 @@
+
+package com.malik.mvc.controller;
+
+public class CounterController {
+
+	
+}

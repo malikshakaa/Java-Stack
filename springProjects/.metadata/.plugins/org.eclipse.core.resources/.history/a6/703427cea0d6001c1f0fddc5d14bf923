@@ -1,0 +1,5 @@
+package com.malik.mvc.services;
+
+public class BookService {
+
+}

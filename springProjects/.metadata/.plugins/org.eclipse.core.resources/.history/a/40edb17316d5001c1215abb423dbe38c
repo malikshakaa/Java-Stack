@@ -1,0 +1,14 @@
+package com.malik.mvc.controllers;
+
+import org.springframework.stereotype.Controller;
+
+import com.malik.mvc.services.DojoService;
+
+@Controller
+public class DojoNinjaController {
+	private DojoService dojoService;
+	
+	public DojoNinjaController (DojoService ninjaDojoService) {
+		this.dojoService = dojoService;
+	}
+}

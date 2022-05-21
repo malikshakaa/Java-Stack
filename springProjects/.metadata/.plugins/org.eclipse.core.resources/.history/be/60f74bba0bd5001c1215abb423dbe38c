@@ -1,0 +1,14 @@
+package com.malik.mvc.services;
+
+import org.springframework.stereotype.Service;
+
+import com.malik.mvc.repositories.DojoRepository;
+
+@Service
+public class DojoNinjaService {
+	private final DojoRepository dojoRepository;
+	public DojoNinjaService (DojoRepository dojoRepository) {
+		this.dojoRepository = dojoRepository;
+	}
+
+}

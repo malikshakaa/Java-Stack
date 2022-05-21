@@ -1,0 +1,5 @@
+package com.malik.mvc.models;
+
+public class LoginUser {
+
+}

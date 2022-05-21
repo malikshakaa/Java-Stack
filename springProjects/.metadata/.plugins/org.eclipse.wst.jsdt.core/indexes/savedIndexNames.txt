@@ -1,0 +1,3 @@
+INDEX VERSION 1.4+C:\Users\Dell\OneDrive\Desktop\springProjects\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2376686266.index
+691821281.index
