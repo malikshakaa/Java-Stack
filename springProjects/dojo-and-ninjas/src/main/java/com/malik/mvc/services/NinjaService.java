@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.malik.mvc.models.Dojo;
 import com.malik.mvc.models.Ninja;
 import com.malik.mvc.repositories.NinjaRepository;
 
@@ -14,10 +15,14 @@ public class NinjaService {
 		this.ninjaRepository = ninjaRepository;
 	}
 
-	public List<Ninja>allDojos(){
+	public List<Ninja>allNinjas(){
 		return ninjaRepository.findAll();
 	}
 	public Ninja creatNinja(Ninja n) {
 		return ninjaRepository.save(n);
+	}
+	
+	public List<Ninja>ninjaInDojo(Dojo dojo){
+		return ninjaRepository.findNinjaByDojo(dojo);
 	}
 }
