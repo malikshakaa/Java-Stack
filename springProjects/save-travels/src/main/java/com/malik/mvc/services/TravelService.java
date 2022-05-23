@@ -6,13 +6,13 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.malik.mvc.models.TravelModel;
-import com.malik.mvc.repositories.TravelRepository1;
+import com.malik.mvc.repositories.TravelRepo;
 
 @Service
 public class TravelService {
-	private final TravelRepository1 travelRepository;
+	private final TravelRepo travelRepository;
 	
-	public TravelService(TravelRepository1 travelRepository) {
+	public TravelService(TravelRepo travelRepository) {
 		this.travelRepository = travelRepository;
 	}
 	
@@ -35,7 +35,7 @@ public class TravelService {
 		TravelModel tt=t2.get();
 		tt.setDescription(t.getDescription());
 		tt.setAmount(t.getAmount());
-		tt.setExpense (t.getExpense());
+		tt.setName(t.getName());
 		tt.setVendor(t.getVendor());
 		return tt;
 

@@ -21,7 +21,7 @@
 </tr>
 		<c:forEach var="book" items="${books}">
 		<tr>
-			<td><c:out value="${book.id}"/></td>
+			<td><c:out value="${book.getid()}"/></td>
 			<td><c:out value="${book.title}"/></td>
 			<td><c:out value="${book.author}"/></td>
 			<td><c:out value="${book.user.userName}"/></td>

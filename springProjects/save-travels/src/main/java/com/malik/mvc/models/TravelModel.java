@@ -11,56 +11,63 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="Expense")
-
+@Table(name="expenses")
 public class TravelModel {
-	
-	
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
-    @Size(min = 1, max = 200,message="it must not be empty")
-    private String expense;
-    @NotNull
-    @Size(min = 5, max = 200,message="it must not be empty")
+    @Size(min = 1, max = 200, message="Field must not be empty.")
+    private String name;
+    @Size(min = 1, max = 200, message="Field must not be empty.")
     private String vendor;
-    @NotNull
-    @Size(min = 5, max = 200,message="it must not be empty")
+    @Min(value =1 , message="Must more than 0$." )
+    private Integer amount;
+    @Size(min = 1, max = 200, message="Field must not be empty.")
     private String description;
-    @NotNull
-    @Min(2)
-    private double amount;
+  
+    public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	// This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
-	public TravelModel() {
+    
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    public TravelModel() {
+    	
 	}
-	public TravelModel(String expense,String vendor,String description,int amount) {
-		this.amount = amount;
-		this.description = description;
-		this.vendor = vendor;
-		this.expense = expense; 
-	}
+    
+    public TravelModel(String name, String vendor, Integer amount, String description) {
+    	this.name = name;
+    	this.vendor = vendor;
+    	this.description = description;
+    	this.amount = amount;
+    }
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getExpense() {
-		return expense;
+	public String getName() {
+		return name;
 	}
-	public void setExpense(String expense) {
-		this.expense = expense;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getVendor() {
 		return vendor;
@@ -68,18 +75,13 @@ public class TravelModel {
 	public void setVendor(String vendor) {
 		this.vendor = vendor;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public double getAmount() {
+	public Integer getAmount() {
 		return amount;
 	}
-	public void setAmount(double amount) {
+	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
+	
 	public Date getCreatedAt() {
 		return createdAt;
 	}
@@ -92,12 +94,9 @@ public class TravelModel {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	@PrePersist
-	protected void onCreat() {
-		this.createdAt = new Date();
-	}
 	@PreUpdate
-	protected void onUpdate() {
-		this.updatedAt = new Date();
-	}	
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+	
 }
