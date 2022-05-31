@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.malik.mvc.models.Category;
+import com.malik.mvc.models.Product;
 import com.malik.mvc.repositories.CategoryRepo;
 
 @Service
@@ -36,6 +37,9 @@ public class CategoryService {
     
     public void deletecategory (Long id) {
     	categoryRepo.deleteById(id);
+    }
+    public List<Category> catntinprod (Product product){
+    	return categoryRepo.findByProductsNotContains(product);
     }
 
 }

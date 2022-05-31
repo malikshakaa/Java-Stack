@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=windows-1256"
     pageEncoding="windows-1256"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>Home Page</h1>
+<a href = "/addcateg" >new category</a>
+	<c:forEach var="category1" items="${categories}">
+		
+			<a href = "/dojos/${category1.id}">${category1.name}</a>
+
+		</c:forEach>
 
 </body>
 </html>

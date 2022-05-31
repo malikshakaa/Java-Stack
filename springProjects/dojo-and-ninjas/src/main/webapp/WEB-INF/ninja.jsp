@@ -39,6 +39,24 @@
         <form:errors path="age"/>
         <form:input path="age"/>
     </p>
+    <form th:action="@{/users/save}"
+    th:object="${user}" method="post"
+    enctype="multipart/form-data"
+    >
+    ...
+    <div>
+     
+    <label>Photos: </label>
+    <input type="file" name="image" accept="image/png, image/jpeg" />
+     
+    </div>
+    ...
+</form>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="file" /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+
     <button type = "submit">create</button>
     </form:form>
 

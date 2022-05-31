@@ -20,6 +20,8 @@ public class Dojo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(nullable = true, length = 64)
+    private String photos;
     @Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;

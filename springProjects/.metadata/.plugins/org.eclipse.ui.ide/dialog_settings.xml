@@ -45,6 +45,9 @@
 		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Dell\OneDrive\Desktop\axsos\axsos2\Java-Stack\Organic_Farms\Organic_Farms\Bio_Palestine"/>
+		</list>
 	</section>
 	<section name="ExternalProjectImportWizard">
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>

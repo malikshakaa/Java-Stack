@@ -21,6 +21,8 @@ public class Ninja {
     private String firstName;
     private String lastName;
     private int age;
+    @Column(nullable = true, length = 64)
+    private String photos;
     @Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;

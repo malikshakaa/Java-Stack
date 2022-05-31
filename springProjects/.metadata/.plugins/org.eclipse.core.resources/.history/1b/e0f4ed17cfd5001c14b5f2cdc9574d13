@@ -1,5 +1,0 @@
-package com.malik.mvc.repositories;
-
-public interface UserRepository {
-
-}
